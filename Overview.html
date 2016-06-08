@@ -1,0 +1,86 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+a:link {
+	color:          red;}
+
+a:visited {
+	color:          blue;}
+
+body {
+	background:     white;
+	font-family:    "Arial";}
+
+ul {
+    margin-top:     0px;}
+
+.title {
+	color:          #600000;
+	font-size:      larger;
+	font-weight:    bold;
+	margin-top:     0px;
+	margin-bottom:  0px;}
+
+.subtitle {
+	color:          #600000;
+	font-weight:    bold;
+	text-align:     right;
+	margin-bottom:  0px;}
+
+.head {
+	font-weight:    bold;
+	margin-bottom:  0px;}
+
+.subhead {
+	margin-bottom:  0px;}
+
+.body {
+	margin-bottom:  0px;
+	margin-top:     0px;}
+-->
+</style>
+<title>CS 378: Project #2: Integer: Overview</title>
+</head>
+
+<body>
+<p class=title>Integer</p>
+<hr>
+
+<table>
+
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td valign=top width=150><p class=head>Description</p></td>
+<td>
+This project is an implementation of a big Integer class written in c++ utilizing methods
+from the STL.  The underlying container can be specified by the user, but is recommended 
+only for use with vectors and deques.  We took extra time to implement the multiplication
+and long-division operations non-naïvely (without repeated addition and subtraction) 
+and gained quite a bit of performance on pow and gcd because of that.  Pow is particularly 
+fast due to its divide and conquer nature.  Moreover, the -= and += operations are split
+up in a case by case manner handling positive addend negative addend, negative addend
+negative addend, etc to gain speed.  We realized that doing sign checks in the underlying
+forloops would cost us big.<br><br>
+We decided that it would be better to have our begin iterator point at the most significant
+digit and contrarily have the end iterator point one past the least significant digit. 
+We also decided it would be better for ("") passed into the constructor to be an invalid
+argument and do not assume it to be zero.  Leading zeros are allowed to be passed into
+the constructor but they are immediately discarded.
+
+
+</table>
+</body>
+</html>
